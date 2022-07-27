@@ -1,5 +1,18 @@
-# just messing around with AWS SAM and other AWS products such as API Gateway, Lambda, and dynamoDB
+### What is this?
 
+#### A brief experiment with serverless. I used AWS SAM to generate a hello world app. I updated the app to use AWS Gateway, an [AWS Lambda function](https://github.com/sergeimellow/receiving_serverless_messages/blob/master/hello_world/app.py), and an AWS DynamoDB table. The end result was a Amazon API Gateway URL that accepted GET requests with a "message" query paramter. The end-point response is done via a AWS Lambda Function and the message and some metadata gets stored in a dynamoDB Table.
+
+```
+$ curl -X GET https://redacted.execute-api.us-east-1.amazonaws.com/Prod/hello?message=the-super-top-secret-message
+
+You sent the message 'the-super-top-secret-message' to serge's lambda function that saved it to a dynamoDB table
+
+```
+
+![image](https://user-images.githubusercontent.com/6325318/181292336-3b8d2ca3-d1cc-4b22-a8e7-e4c79701e720.png)
+
+
+--
 # sam-app
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
